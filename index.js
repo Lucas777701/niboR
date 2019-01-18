@@ -1,6 +1,7 @@
 //robin.js:
 const Discord = require('discord.js');
 const {TOKEN} = require('./setup.js');
+var database = require('./database.js');
 const Robin = new Discord.Client({
 autoReconnect: true, 
 fetchAllMembers: true,
@@ -8,12 +9,10 @@ disableEveryone: true,
 disabledEvents: ['typingStart', 'typingStop', 'guildMemberSpeaking'],
 messageCacheMaxSize: 2024,
 })
-var mongoose = require('mongoose');
-var database = require('./database.js');
 const fs = require('fs');
 const moment = require('moment');
-require('moment-duration-format');
 moment.locale('pt-BR');
+
 
 function changing_status() {
   
