@@ -19,7 +19,7 @@ module.exports.run = (Robin, message, ops, args) => {
                             img.composite(PR, 0, 0);
                             img.print(fonte, 115, 36, message.content.split(' ').slice(1).join(' '));
                                 img.getBuffer(Jimp.MIME_PNG, (erri, buffer) => {
-                                    message.channel.send(``, new Discord.Attachment(buffer,  'pr.png')).catch(err => {
+                                    message.channel.send(new Discord.Attachment(buffer,  'pr.png')).catch(err => {
                                         message.channel.send(`\`${message.author.username}\`, Parece que ocorreu um erro ao enviar essa imagem.`);
                                 });
                             });
